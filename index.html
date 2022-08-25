@@ -31,13 +31,14 @@
         overflow-y: hidden;
         scroll-snap-type: x mandatory;
     }
-    .ccc {
+    .p {
         display: inline-block;
         width: 100%;
         height: 100%;
         margin: 0;
         padding: 0;
         scroll-snap-align: start;
+        vertical-align: top;
     }
     .c-white {
         background-color: #ffffff;
@@ -95,38 +96,55 @@
         opacity: 0;
         user-select: none;
     }
-    .g-download-link {
+    .d-block {
         display: block;
+    }
+    @media (prefers-color-scheme: dark) {
+        body {
+            color: #ffffff;
+            background-color: #303030;
+        }
+        a {
+            color: #9494ff;
+        }
     }
     </style>
 </head><!--
 --><body><!--
 --><div class="colors-container"><!--
-        --><div class="ccc g-media">
+        --><div class="p">
+            <h1>Colors</h1>
+            <p>Scroll horizontal to see different colors.</p>
+            <p>Single click/tap to show current color.</p>
+            <p>Long press/click to enter/leave fullscreen.</p>
             <h1>Media</h1>
             <h2>Audio</h2>
             <h3>BBC News 20220708 Japan</h3>
             <audio controls src="https://static.basalte.be/media/audio/bbc_news_20220708_japan.mp3"></audio>
-            <a class="g-download-link" href="https://static.basalte.be/media/audio/bbc_news_20220708_japan.mp3" download>Download</a>
+            <a class="d-block" href="https://static.basalte.be/media/audio/bbc_news_20220708_japan.mp3" download>Download</a>
             <h3>Music Bee Moved</h3>
             <audio controls src="https://static.basalte.be/media/audio/music_bee_moved_48khz_16bit.m4a"></audio>
-            <a class="g-download-link" href="https://static.basalte.be/media/audio/music_bee_moved_48khz_16bit.m4a" download>Download</a>
+            <a class="d-block" href="https://static.basalte.be/media/audio/music_bee_moved_48khz_16bit.m4a" download>Download</a>
             <h3>Music Example</h3>
             <audio controls src="https://static.basalte.be/media/audio/music_example.ogg"></audio>
-            <a class="g-download-link" href="https://static.basalte.be/media/audio/music_example.ogg" download>Download</a>
-            <h3>- end -</h3>
+            <a class="d-block" href="https://static.basalte.be/media/audio/music_example.ogg" download>Download</a>
+            <h1>Links</h1>
+            <h2>Universal Link</h2>
+            <a class="d-block" href="https://musicapp.basalte.be/" target="_blank">Basalte App</a>
+            <h2>Custom scheme</h2>
+            <a class="d-block" href="basalte-musicapp://" target="_blank">Basalte App</a>
         </div><!--
-        --><div class="ccc c-white"></div><!--
-        --><div class="ccc c-black"></div><!--
-        --><div class="ccc c-red"></div><!--
-        --><div class="ccc c-green"></div><!--
-        --><div class="ccc c-blue"></div><!--
-        --><div class="ccc c-grey-1"></div><!--
-        --><div class="ccc c-grey-2"></div><!--
-        --><div class="ccc c-grey-3"></div><!--
-        --><div class="ccc c-bas-highlight-on-dark"></div><!--
-        --><div class="ccc c-bas-highlight-on-light"></div><!--
-        --><div class="ccc c-bas-highlight-on-dark-ellie"></div><!--
+        --><div class="p c c-white"></div><!--
+        --><div class="p c c-black"></div><!--
+        --><div class="p c c-red"></div><!--
+        --><div class="p c c-green"></div><!--
+        --><div class="p c c-blue"></div><!--
+        --><div class="p c c-grey-1"></div><!--
+        --><div class="p c c-grey-2"></div><!--
+        --><div class="p c c-grey-3"></div><!--
+        --><div class="p c c-bas-highlight-on-dark"></div><!--
+        --><div class="p c c-bas-highlight-on-light"></div><!--
+        --><div class="p c c-bas-highlight-on-dark-ellie"></div><!--
         --><div id="c-toast" class="c-toast"></div><!--
     --></div><!--
 --><script>
@@ -152,7 +170,7 @@
         cToastTxt = document.createTextNode('empty')
         cToastEl.appendChild(cToastTxt)
 
-        cccElements = document.getElementsByClassName('ccc')
+        cccElements = document.getElementsByClassName('c')
 
         length = cccElements.length
         for (i = 0; i < length; i++) {
